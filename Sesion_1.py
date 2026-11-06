@@ -15,7 +15,7 @@ elif modulos == "listas":
   valor_inicial = st.number_imput("Ingrese el valor incial de su lista", min_value = 0, max_value = 1000, value = 0)
   valor_final = st.number_imput("Ingrese el valor final de su lista", min_value = 0, max_value = 10000, value = 10)
   step = st.slider("Ingrese step de su lista", min_value = 0, max_value = 10, value = 1)
-  lista = list(range(valor_inicial, valor final, step))
+  lista = list(range(valor_inicial, valor_final, step))
   st.write(lista)
 
 elif modulos == "arreglos":
