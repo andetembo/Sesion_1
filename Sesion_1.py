@@ -12,6 +12,12 @@ if modulos == "variables":
   st.write("El resultado de la garvedad API es: ", API)
 elif modulos == "listas":
   st.write("Usted está en el modulo de listas")
+  valor_inicial = st.number_imput("Ingrese el valor incial de su lista", min_value = 0, max_value = 1000, value = 0)
+  valor_final = st.number_imput("Ingrese el valor final de su lista", min_value = 0, max_value = 10000, value = 10)
+  step = st.slider("Ingrese step de su lista", min_value = 0, max_value = 10, value = 1)
+  lista = list(range(valor_inicial, valor final, step))
+  st.write(lista)
+
 elif modulos == "arreglos":
   st.write("Usted está en el modulo de arreglos")
 else:
