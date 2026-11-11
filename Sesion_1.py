@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import libreria_funciones as lf
 
 st.sidebar.title("Parámetros")
 
@@ -25,9 +26,12 @@ elif modulos == "arreglos":
   step_arreglo = st.slider("Ingrese step de su areglo", min_value = 0, max_value = 10, value = 1)
   arreglo = np.arange(valor_inicial_arreglo, valor_final_arreglo, step_arreglo)
   st.write(arreglo)
-  
 
 else:
   st.write("Usted está en el modulo de funciones")
-
-
+  produccion = st.number_input("Ingrese la produccion diaria en barriles: ", min_value = 0, max_value = 10000, value = 1000)
+  BSW = st.number_input("Ingrese % de agua y sedimento BSW: ", min_value = 0.0, max_value = 1.0, value = 0.05)
+  dias_produccion = st.slider("Ingrese los dias efectivos de produccion; ", min_value = 1, max_value = 365, value = 30)
+  precio_barril = st.number_input("Ingrese precio del barril: ", min_value = 0.0, max_value = 150.0, value = 75.0 )
+  ingreso = lf.produccion_neta_petroleo(produccion, BSW, dias_produccion, precio_barril)
+  st.warning(ingreso)
