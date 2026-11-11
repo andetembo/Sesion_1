@@ -3,7 +3,7 @@ import numpy as np
 import libreria_funciones as lf
 
 
-st.sidebar.image("Python-Logo.png")
+st.sidebar.image("imagenes/Python-Logo.png")
 st.sidebar.title("Parámetros")
 
 modulos = st.sidebar.selectbox("selecciona un modulo", ["variables", "listas", "arreglos", "funciones"])
