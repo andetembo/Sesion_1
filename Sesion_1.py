@@ -1,5 +1,5 @@
 import streamlit as st
-
+import numpy as np
 
 st.sidebar.title("Parámetros")
 
@@ -20,5 +20,14 @@ elif modulos == "listas":
 
 elif modulos == "arreglos":
   st.write("Usted está en el modulo de arreglos")
+  valor_inicial_arreglo = st.number_input("Ingrese el valor incial de su arreglo", min_value = 0, max_value = 1000, value = 0)
+  valor_final_arreglo = st.number_input("Ingrese el valor final de su arreglo", min_value = 0, max_value = 10000, value = 10)
+  step_arreglo = st.slider("Ingrese step de su areglo", min_value = 0, max_value = 10, value = 1)
+  arreglo = np.arange(valor_inicial_arreglo, valor_final_arreglo, step_arreglo)
+  st.write(arreglo)
+  
+
 else:
   st.write("Usted está en el modulo de funciones")
+
+
